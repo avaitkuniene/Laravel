@@ -102,5 +102,10 @@ Route::get('authors', [AuthorController::class, 'index']);
 Route::get('authors/{id}', [AuthorController::class, 'show']);
 
 Route::get('blogs', [BlogController::class, 'index']);
+Route::any('blogs/create', [BlogController::class, 'create']);
+Route::get('blogs/edit', [BlogController::class, 'edit']);
+Route::get('blogs/delete', [BlogController::class, 'delete']);
 Route::get('blogs/{id}', [BlogController::class, 'show']);
 
+
+Route::get('products/create', [ProductController::class, 'create']);
