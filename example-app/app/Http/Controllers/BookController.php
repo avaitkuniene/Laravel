@@ -3,48 +3,106 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class BookController extends Controller
 {
     public function index(Request $request): View
     {
-        $books = Book::all();
-//        foreach ($books as $book) {
-//            var_dump($book->id);
-//            var_dump($book->name);
-//        }
+        $books = Book::paginate(6);
 
-        //$page = $_GET['page'];
-        $page = $request->get('page');
-        $name = 'Asta';
-        $array = [
-            [
-                'product_name' => 'TV',
-                'price' => 300,
-            ],
-            [
-                'product_name' => 'Phone',
-                'price' => 500,
-            ],
-        ];
+        /*$books = Book::cursor()->filter(function ($book) {
+            return $book->id > 1010;
+        });*/
+
+        //$books = Book::lazy();
 
         return view('books/index', [
-            'page' => $page,
-            'name' => $name,
-            'products' => $array,
             'books' => $books
         ]);
     }
 
-    public function show($id)
+    public function show($id): View
     {
         $book = Book::find($id);
 
         if ($book === null) {
             abort(404);
         }
-        dd($book);
+
+        return view('books/show', [
+            'book' => $book
+        ]);
+    }
+
+    public function edit(Request $request, int $id): View|RedirectResponse
+    {
+        $book = Book::find($id);
+
+        if ($book=== null) {
+            abort(404);
+        }
+
+        if ($request->isMethod('post')) {
+
+            $request->validate(
+                [
+                    'name' => 'required|max:20',
+                    'category_id' => 'required|max:20',
+                    'author_id' => 'required|max:20',
+                    'page_count' => 'required|date',
+                ]
+            );
+
+            $book->fill($request->all());
+            $book->save();
+
+            return redirect('books')->with('success', 'Category updated!');
+        }
+
+        return view('books/edit', [
+            'book' => $book
+        ]);
+    }
+
+    public function delete(int $id)
+    {
+
+        $book = Book::find($id);
+
+        if ($book=== null) {
+            abort(404);
+        }
+
+        $book->delete();
+
+        return redirect('books')->with('success', 'Book was removed!');
+    }
+
+    public function store(Request $request) {
+
+        $request->validate(
+            [
+                'name' => 'required|max:20',
+                'category_id' => 'required|max:20',
+                'author_id' => 'required|max:20',
+                'page_count' => 'required',
+            ]
+        );
+
+        Book::create($request->all());
+
+        //TODO change to authors list
+        return redirect('books')
+            ->with('success', 'Book added successfully!');
+    }
+
+    public function create(): View
+    {
+        return view('books/create');
     }
 }

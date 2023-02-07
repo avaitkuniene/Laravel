@@ -15,10 +15,12 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 20; $i++) {
+        for($i = 0; $i < 50; $i++) {
             Book::create([
                 'name' => fake()->name,
-                'page_count' => fake()->numberBetween(1, 700)
+                'page_count' => fake()->numberBetween(1, 700),
+                'author_id' => fake()->numberBetween(1,10),
+                'category_id' => fake()->numberBetween(1,9)
             ]);
         }
     }

@@ -1,12 +1,22 @@
-<div>
-        Kategorijos ID: {{ $category->id }}<br>
-        Kategorijos pavadinimas: {{ $category->category_name }}<br>
-        Atnaujinta: {{ $category->updated_at }}<br><br>
-</div>
-<h3>Knygos šioje kategorijoje</h3>
-<div>
-    @foreach($books as $book)
-        Knygos pavadinimas: {{ $book->name }}<br>
-        Puslapiu skaicius: {{ $book->page_count }}<br><br>
+@extends('components.layout')
+
+@section('title', $category->category_name)
+
+@section('content')
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ $category->category_name }}</h5>
+            <p class="card-text">
+                <span>Enabled: {{ $category->enabled }}</span>
+            </p>
+        </div>
+    </div>
+
+    <h5>BOOKS:</h5>
+    @foreach($category->books as $book)
+        <div>
+            Name: {{ $book->name }} |
+            Puslapiai {{ $book->page_count }}
+        </div>
     @endforeach
-</div>
+@endsection

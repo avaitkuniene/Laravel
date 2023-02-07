@@ -2,15 +2,26 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
     use HasFactory;
 
-//    protected $table = 'category';
-//    protected $primaryKey = 'category_id';
-//    public $incrementing = false;
-//    protected $keyType = 'string';
+    protected $fillable = [
+        'category_name',
+        'enabled',
+    ];
+    protected $attributes = [
+        'enabled' => false
+    ];
+
+    //One to many saryšis, kuris pagal category_id prie knygos sugebės išrišti informaciją
+    public function books(): HasMany
+    {
+        return $this->hasMany(Book::class);
+    }
 }
