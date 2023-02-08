@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col">
-            <a href="{{ url('categories/create') }}" class="btn btn-primary">Create</a>
+            <a href="{{ url('categories/create') }}" class="btn btn-primary">Add new category</a>
         </div>
     </div>
 

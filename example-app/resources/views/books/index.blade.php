@@ -30,8 +30,8 @@
                     <a href="{{ url('books', ['id' => $book->id]) }}">{{ $book->name }}</a>
                 </td>
                 <td>{{ $book->page_count }}</td>
-                <td>{{ $book->author->name}}</td>
-                <td>{{ $book->category->category_name }}</td>
+                <td>@if ($book->author){{ $book->author->full_name}}@endif</td>
+                <td>@if ($book->category){{ $book->category->category_name }}@endif</td>
                 <td>
                     <a href="{{ route('books.edit', ['id' => $book->id]) }}" class="btn btn-info">Edit</a>
                 </td>

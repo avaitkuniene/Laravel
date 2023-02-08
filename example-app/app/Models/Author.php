@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'last_name',
@@ -19,5 +21,8 @@ class Author extends Model
         return $this->hasMany(Book::class);
     }
 
-    use HasFactory;
+    public function getFullNameAttribute(): string
+    {
+        return sprintf('%s %s (%s)', $this->name, $this->last_name, $this->country);
+    }
 }

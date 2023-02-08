@@ -19,24 +19,50 @@
         @endif
 
         @csrf
-
-        <div class="form-group">
-            <input type="text" name="name" value="{{ old('name') }}" class="form-control
-            @error('name') is-invalid @enderror" placeholder="Book name">
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label">Book name:</label>
+                <input type="text" name="name" value="{{ old('name') }}" class="form-control
+                @error('name') is-invalid @enderror" placeholder="Book name">
+            </div>
         </div>
-        <div class="form-group">
-            <input type="text" name="category_id" value="{{ old('category_id') }}" class="form-control
-            @error('category_id') is-invalid @enderror" placeholder="Category ID">
-        </div>
-        <div class="form-group">
-            <input type="text" name="author_id" value="{{ old('author_id') }}" class="form-control
-            @error('author_id') is-invalid @enderror" placeholder="Author ID">
-        </div>
-        <div class="form-group">
-            <input type="text" name="page_count" value="{{ old('page_count') }}" class="form-control
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label">Page count:</label>
+                <input type="text" name="page_count" value="{{ old('page_count') }}" class="form-control
             @error('page_count') is-invalid @enderror" placeholder="Page count">
+            </div>
         </div>
-
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label">Author:</label>
+                <select name="author_id" class="form-control">
+                    @foreach($authors as $author)
+                        <option value="{{ $author->id }}">{{ $author->full_name }}</option>
+                    @endforeach
+                </select><br>
+                <div class="row">
+                    <div class="col">
+                        <a href="{{ url('authors/create') }}" class="btn btn-primary">Add new author</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label class="form-label">Category:</label>
+                    <select name="category_id" class="form-control">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                        @endforeach
+                    </select><br>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{{ url('categories/create') }}" class="btn btn-primary">Add new category</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div class="col-12">
             <button type="submit" class="btn btn-info">Save</button>
         </div>

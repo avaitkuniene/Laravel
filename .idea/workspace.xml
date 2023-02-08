@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="Updated book controller, author controller">
+      <change afterPath="$PROJECT_DIR$/example-app/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-app/resources/views/auth/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example-app/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/app/Models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Models/Author.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Models/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/views/authors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/authors/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/views/books/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/books/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/views/books/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/books/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/views/books/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/books/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/views/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/views/components/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/components/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-app/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/vite.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/vigi-app/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LNOdblUMdMMhmeXQPlyHDxxvAy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Princeses/Laravel/example-app/resources/views/components",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Princeses\Laravel\example-app\resources\views\components" />
+      <recent name="C:\Users\Princeses\Laravel\example-app\routes" />
+      <recent name="C:\Users\Princeses\Laravel\example-app\resources\views\categories" />
+      <recent name="C:\Users\Princeses\Laravel\example-app\app\Models" />
+      <recent name="C:\Users\Princeses\Laravel\example-app\app\Http\Requests" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="" />
+      <created>1675708161981</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675708161981</updated>
+      <workItem from="1675708163552" duration="31518000" />
+    </task>
+    <task id="LOCAL-00001" summary="Updated book controller, author controller">
+      <created>1675794499567</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675794499567</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated book controller, author controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated book controller, author controller" />
+  </component>
+</project>

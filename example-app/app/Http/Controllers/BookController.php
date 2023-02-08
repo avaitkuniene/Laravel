@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -87,9 +89,9 @@ class BookController extends Controller
 
         $request->validate(
             [
-                'name' => 'required|max:20',
-                'category_id' => 'required|max:20',
-                'author_id' => 'required|max:20',
+                'name' => 'required|max:30',
+                'category_id' => 'required',
+                'author_id' => 'required',
                 'page_count' => 'required',
             ]
         );
@@ -103,6 +105,12 @@ class BookController extends Controller
 
     public function create(): View
     {
-        return view('books/create');
+        $authors = Author::all();
+        $categories = Category::all();
+
+        return view('books/create', [
+            'authors' => $authors,
+            'categories' => $categories
+        ]);
     }
 }

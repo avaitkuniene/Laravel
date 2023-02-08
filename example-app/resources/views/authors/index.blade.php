@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col">
-            <a href="{{ url('authors/create') }}" class="btn btn-primary">Create</a>
+            <a href="{{ url('authors/create') }}" class="btn btn-primary">Add new author</a>
         </div>
     </div>
 

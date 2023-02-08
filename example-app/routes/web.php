@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthorController;
+use Inertia\Inertia;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,40 +17,22 @@ use App\Http\Controllers\AuthorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });
 
-// GET index            books/index
-// GET show/{id}        books/show/1
-// GET create           books/create
-// POST store           books/store
-// GET edit/{id}        books/edit/1
-// PUT update/{id}      books/update/1
-// DELETE destroy/{id}  books/destroy/1
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('books', [BookController::class, 'index']);
-Route::get('books/create', [BookController::class, 'create']);
-Route::get('books/edit/{id}', [BookController::class, 'edit'])->name('books.edit');
-Route::post('books/create', [BookController::class, 'create']);
-Route::get('books/{id}', [BookController::class, 'show'])->whereNumber('id');
-Route::delete('books/delete/{id}', [BookController::class, 'delete'])->name('books.delete');
-Route::post('books/create', [BookController::class, 'store']);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('authors', [AuthorController::class, 'index']);
-Route::get('authors/edit/{id}', [AuthorController::class, 'edit'])->name('authors.edit');
-Route::get('authors/create', [AuthorController::class, 'create']);
-Route::delete('authors/delete/{id}', [AuthorController::class, 'delete'])->name('authors.delete');
-Route::get('authors/{id}', [AuthorController::class, 'show']);
-Route::post('authors/create', [AuthorController::class, 'store']);
-
-Route::get('categories', [CategoryController::class, 'index']);
-Route::any('categories/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
-Route::get('categories/create', [CategoryController::class, 'create']);
-Route::post('categories/create', [CategoryController::class, 'store']);
-Route::delete('categories/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
-Route::get('categories/{id}', [CategoryController::class, 'show']);
-
-Route::get('products/create', [ProductController::class, 'create']);
-
-
-
+require __DIR__.'/auth.php';
