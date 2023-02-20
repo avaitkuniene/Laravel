@@ -3,7 +3,7 @@
 @section('title', 'Authors')
 
 @section('content')
-    <h1>Categories</h1>
+    <h3>Categories</h3>
 
     @include('components.alert.success_message')
 

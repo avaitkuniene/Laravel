@@ -20,18 +20,21 @@
                     <li class="nav-item">
                         <a href="{{ url('books') }}" class="nav-link" aria-current="page" href="#">Books</a>
                     </li>
-                    @if (auth()->user())
-                    <li class="nav-item">
-                        <a href="{{ url('profile') }}" class="nav-link" aria-current="page" href="#">Your profile, {{ auth()->user()->name }}</a>
-                    </li>
-                    @endif
                     <li class="nav-item">
                         @if(auth()->user() === null)
                         <a href="{{ url('login') }}" class="nav-link" aria-current="page" href="#">Login</a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ url('register') }}" class="nav-link" aria-current="page" href="#">Register</a>
+                    </li>
+                    <li class="nav-item">
                         @else
                         <a href="{{ url('logout') }}" class="nav-link" aria-current="page" href="#">Logout</a>
+                        @endif
+                    </li>
+                    <li class="nav-item">
+                        @if (auth()->user())
+                        <a href="{{ url('profile') }}" class="nav-link" href="#">Your profile</a>
                         @endif
                     </li>
                 </ul>

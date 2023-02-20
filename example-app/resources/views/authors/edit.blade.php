@@ -3,7 +3,7 @@
 @section('title', 'Edit '. $author->name)
 
 @section('content')
-    <h1>Author {{ $author->name }} edit form</h1>
+    <h3>Author {{ $author->name }} edit form</h3>
 
     <form action="{{ route('authors.edit', ['id' => $author->id]) }}" method="post" class="row g-3">
 

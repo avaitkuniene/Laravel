@@ -1,24 +1,8 @@
 @extends('components.layout')
 
-@section('title', 'Login')
+@section('title', 'Reset password')
 
 @section('content')
-
-    @if(session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
-    @endif
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-header">
-            Welcome, {{ $user->name }}
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Full name: {{ $user->name }}</li>
-            <li class="list-group-item">E-mail: {{ $user->email }}</li>
-        </ul>
-    </div><br><br>
 
     <h3>Change your password</h3><br>
 

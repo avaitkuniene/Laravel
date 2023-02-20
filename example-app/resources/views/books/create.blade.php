@@ -6,7 +6,7 @@
 
     <h3>Add a new book</h3>
 
-    <form action="{{ url('books/create') }}" method="post" class="row g-3">
+    <form action="{{ url('books/create') }}" method="post" class="row g-3" enctype="multipart/form-data">
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -36,7 +36,7 @@
         <div class="col-12">
             <div class="form-group">
                 <label class="form-label">Author:</label>
-                <select name="author_id" class="form-control">
+                <select name="author_id[]" class="form-control" multiple>
                     @foreach($authors as $author)
                         <option value="{{ $author->id }}">{{ $author->full_name }}</option>
                     @endforeach
@@ -62,6 +62,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-12">
+                <label class="form-label">File</label>
+                <input type="file" name="image" class="form-control">
             </div>
         <div class="col-12">
             <button type="submit" class="btn btn-info">Save</button>

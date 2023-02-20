@@ -48,7 +48,10 @@ class CategoryController extends Controller
     //atsakinga uz atvaizdavima create formos
     public function create(): View|RedirectResponse
     {
-        return view('categories/create');
+        $categories = Category::where('category_id', null)->get();
+        return view('categories/create', [
+            'categories' => $categories
+        ]);
     }
 
     public function edit(Request $request, int $id): View|RedirectResponse

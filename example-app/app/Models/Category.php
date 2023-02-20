@@ -14,7 +14,9 @@ class Category extends Model
     protected $fillable = [
         'category_name',
         'enabled',
+        'category_id'
     ];
+
     protected $attributes = [
         'enabled' => false
     ];

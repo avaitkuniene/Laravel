@@ -15,17 +15,35 @@ class BookController extends Controller
 {
     public function index(Request $request): View
     {
-        $books = Book::paginate(6);
 
-        /*$books = Book::cursor()->filter(function ($book) {
-            return $book->id > 1010;
-        });*/
+        $books = Book::query(); //query builder
+        if ($request->query('category_id')) {
+            $books->where('category_id', '=', $request->query('category_id'));
+        }
+        if ($request->query('name')) {
+            $books->where('name', 'like', '%' . $request->query('name') . '%');
+        }
+        $books = Book::with('category', 'authors')->paginate(10);
 
-        //$books = Book::lazy();
+//        if ($request->query('category_id')) {
+//            $books = Book::query()
+//                ->where('category_id', '=', $request->query('category_id'))
+//                ->paginate(10);
+//        } else {
+//            //$books = Book::with('category', 'authors')->paginate(10);
+//
+//        }
+
+        $categories = Category::where('enabled', '=', 1)
+            ->whereNull('category_id')->get();
 
         return view('books/index', [
-            'books' => $books
+            'books' => $books,
+            'categories' => $categories,
+            'category_id' => $request->query('category_id'),
+            'name' => $request->query('name')
         ]);
+
     }
 
     public function show($id): View
@@ -86,17 +104,34 @@ class BookController extends Controller
     }
 
     public function store(Request $request) {
+        #1. Reikia papildyti forma mygtuku <input type=file +
+        #2. Pakeisti formos tipą +
+        #3. Pasiziurėt requestą +
+        #4. Patalpinti failą +
+        #5. Prie knygos prisidėti lauką skirtą failo path: migraciją +
+        #6. Galėsim pasaugoti book image value prie duomenų bazės
+        #7. Pabandysim nuotrauką atvaizduoti template, tam reikės naudoti symlink ir reikės assetus.
 
         $request->validate(
             [
                 'name' => 'required|max:30',
                 'category_id' => 'required',
-                'author_id' => 'required',
+//                'author_id' => 'required',
                 'page_count' => 'required',
             ]
         );
 
-        Book::create($request->all());
+
+        $book = Book::create($request->all());
+        $file = $request->file('image');
+        $path = $file->store('book_images');
+        $book->image = $path;
+
+        $book->save();
+
+        $authors = Author::find($request->post('author_id'));
+
+        $book->authors()->attach($authors);
 
         //TODO change to authors list
         return redirect('books')

@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-    <h1>Sign in</h1><br>
+    <h3>Sign in</h3><br>
     <form action="{{ route('authenticate') }}" method="post">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -20,7 +20,6 @@
             <label for="exampleInputEmail1">Email address</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                    value="{{ old('name') }}">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>

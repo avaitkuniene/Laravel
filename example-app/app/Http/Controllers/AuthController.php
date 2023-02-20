@@ -27,7 +27,7 @@ class AuthController extends Controller
             return redirect(route('profile'));
         }
 
-        return back()->withErrors(['email' => 'Invalid data privided']);
+        return back()->withErrors(['email' => 'Invalid data provided']);
 
     }
 
@@ -40,4 +40,5 @@ class AuthController extends Controller
 
         return redirect('home');
     }
+
 }
