@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="Added login/logout">
-      <change afterPath="$PROJECT_DIR$/example-app/app/Http/Controllers/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/app/Http/Controllers/ResetPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/app/Http/Middleware/RoleBasedMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/app/Http/Requests/Passwords/ChangeRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/app/Http/Requests/Registration/StoreRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/database/migrations/2023_02_09_165046_add_admin_role_for_user_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/resources/views/passwords/reset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/resources/views/passwords/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/resources/views/registration/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-app/resources/views/registration/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/config/logging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/authors/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/authors/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/authors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/authors/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/books/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/books/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/books/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/books/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/categories/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/components/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/components/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/resources/views/users/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-app/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/example-app/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="new project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675708161981</updated>
-      <workItem from="1675708163552" duration="77406000" />
+      <workItem from="1675708163552" duration="77760000" />
     </task>
     <task id="LOCAL-00001" summary="Updated book controller, author controller">
       <created>1675794499567</created>
@@ -103,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675886961428</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new project">
+      <created>1676909530566</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676909530566</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +100,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated book controller, author controller" />
     <MESSAGE value="Added login/logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added login/logout" />
+    <MESSAGE value="new project" />
+    <option name="LAST_COMMIT_MESSAGE" value="new project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
