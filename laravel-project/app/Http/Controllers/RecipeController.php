@@ -1,0 +1,133 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Category;
+use App\Models\Ingredient;
+use App\Models\Recipe;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+
+class RecipeController extends Controller
+{
+    public function index(Request $request): View
+    {
+        $recipes = Recipe::query();
+
+        if ($request->query('category_id')) {
+            $recipes->where('category_id', '=', $request->query('category_id'));
+        }
+
+        $recipes = Recipe::with('category', 'ingredients')->paginate(5);
+
+        $categories = Category::all();
+
+        return view('recipes/index', [
+            'recipes' => $recipes,
+            'categories' => $categories,
+            'category_id' => $request->query('category_id'),
+        ]);
+    }
+
+    public function show($id): View
+    {
+        $recipe = Recipe::find($id);
+
+        if ($recipe === null) {
+            abort(404);
+        }
+
+        return view('recipes/show', [
+            'recipe' => $recipe
+        ]);
+    }
+
+    public function edit(Request $request, int $id): View|RedirectResponse
+    {
+        $recipe = Recipe::find($id);
+        $ingredients = Ingredient::all();
+        $categories = Category::all();
+
+        if ($recipe=== null) {
+            abort(404);
+        }
+
+        if ($request->isMethod('post')) {
+
+            $request->validate(
+                [
+                    'name' => 'required|max:50',
+                    'description' => 'required',
+                ]
+            );
+
+            $recipe->fill($request->all());
+            $file = $request->file('image');
+            $path = $file->store('recipe_images');
+            $recipe->image = $path;
+
+            $recipe->save();
+
+            return redirect('recipes')->with('success', 'Recipe updated successfully!');
+        }
+
+        return view('recipes/edit', [
+            'recipe' => $recipe,
+            'ingredients' => $ingredients,
+            'categories' => $categories
+        ]);
+    }
+
+    public function delete(int $id)
+    {
+
+        $recipe = Recipe::find($id);
+        $recipe->ingredients()->detach();
+
+        if ($recipe=== null) {
+            abort(404);
+        }
+
+        $recipe->delete();
+
+        return redirect('recipes')->with('success', 'Recipe was removed successfully!');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate(
+            [
+                'name' => 'required|max:30',
+                'description' => 'required',
+            ]
+        );
+
+
+        $recipe = Recipe::create($request->all());
+
+        $file = $request->file('image');
+        $path = $file->store('recipe_images');
+        $recipe->image = $path;
+
+        $recipe->save();
+
+        $ingredients = Ingredient::find($request->post('ingredient_id'));
+
+        $recipe->ingredients()->attach($ingredients);
+
+        return redirect('recipes')
+            ->with('success', 'Recipe added successfully!');
+    }
+
+    public function create(): View
+    {
+        $ingredients = Ingredient::all();
+        $categories = Category::all();
+
+        return view('recipes/create', [
+            'ingredients' => $ingredients,
+            'categories' => $categories
+        ]);
+    }
+}
