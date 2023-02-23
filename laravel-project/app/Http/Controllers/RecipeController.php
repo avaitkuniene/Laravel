@@ -19,12 +19,10 @@ class RecipeController extends Controller
             $recipes->where('category_id', '=', $request->query('category_id'));
         }
 
-        $recipes = Recipe::with('category', 'ingredients')->paginate(5);
-
-        $categories = Category::all();
+        $categories = Category::where('is_active', '=', 1)->get();
 
         return view('recipes/index', [
-            'recipes' => $recipes,
+            'recipes' => $recipes->with('category', 'ingredients')->paginate(5),
             'categories' => $categories,
             'category_id' => $request->query('category_id'),
         ]);
@@ -100,6 +98,7 @@ class RecipeController extends Controller
             [
                 'name' => 'required|max:30',
                 'description' => 'required',
+                'category_id' => 'required'
             ]
         );
 

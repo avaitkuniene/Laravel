@@ -5,6 +5,7 @@
 @section('content')
 
     <form action="{{ url('recipes/create') }}" method="post" class="row g-3" enctype="multipart/form-data">
+        @csrf
         <div class="card mb-3 text-bg-dark border-light">
             <div class="card-body">
                 <div class="form-group">
@@ -33,8 +34,8 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description:</label>
-                    <input type="text" name="description" value="{{ old('description') }}" class="form-control
-                    @error('description') is-invalid @enderror" placeholder="Description">
+                    <textarea type="text" name="description" value="{{ old('description') }}" class="form-control
+                    @error('description') is-invalid @enderror" placeholder="Description"></textarea>
                 </div><br>
                 <div class="form-group">
                     <button type="submit" class="btn btn-outline-light">Save</button>

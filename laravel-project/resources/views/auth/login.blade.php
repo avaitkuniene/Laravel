@@ -4,6 +4,7 @@
 
 @section('content')
     @include('layouts.success')
+
 <form action="{{ route('authenticate') }}" method="post">
     <div class="col d-flex justify-content-center" style="width: 60%">
         <div class="card text-bg-dark border-light justify-content-center align-items-center" style="width: 80%;">

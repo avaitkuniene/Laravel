@@ -27,17 +27,16 @@
                 <li class="nav-item">
                     <a href="{{ url('register') }}" class="nav-link" aria-current="page" href="#">Register</a>
                 </li>
-                <li class="nav-item">
-                    @else
-                        <a href="{{ url('logout') }}" class="nav-link" aria-current="page" href="#">Logout</a>
                     @endif
-                </li>
                 <li class="nav-item">
                     @if (auth()->user())
                         <a href="{{ url('profile') }}" class="nav-link" href="#">Your profile</a>
-                    @endif
                 </li>
             </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="{{ url('logout') }}" class="btn btn-outline-danger" aria-current="page" href="#" style="color: red">Logout</a>
+            </div>
+            @endif
         </div>
     </div>
 </nav>

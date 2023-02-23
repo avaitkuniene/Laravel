@@ -22,7 +22,7 @@
                 </div>
             </div>
         @endforeach
-    </div>
+    </div><br>
     <div class="row">
         {{ $recipes->links() }}
     </div>

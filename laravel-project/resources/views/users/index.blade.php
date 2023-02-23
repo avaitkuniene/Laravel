@@ -56,6 +56,8 @@
             <div class="form-group" style="width: 60%;">
                 <button type="submit" class="btn btn-outline-light">Change password</button>
             </div><br>
+        </div>
+    </div>
     </form>
         </div>
     </div>

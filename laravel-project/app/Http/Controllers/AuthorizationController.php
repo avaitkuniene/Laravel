@@ -24,7 +24,7 @@ class AuthorizationController extends Controller
 
         if (Auth::attempt($data, $request->get('remember'))) {
             $request->session()->regenerate();
-            return redirect(route('profile'));
+            return redirect('profile');
         }
 
         return back()->withErrors(['email' => 'Invalid data provided']);
