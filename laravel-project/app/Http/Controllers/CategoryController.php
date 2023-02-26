@@ -50,33 +50,32 @@ class CategoryController extends Controller
         return view('categories/create');
     }
 
-    public function editView($id)
+    public function edit(Request $request, int $id): View|RedirectResponse
     {
         $category = Category::find($id);
 
         if ($category === null) {
             abort(404);
         }
+
+        if ($request->isMethod('post')) {
+
+            $request->validate(
+                [
+                    'name' => 'required|max:50',
+                ]
+            );
+
+            $category->fill($request->all());
+            $category->enabled = $request->post('is_active', false);
+            $category->save();
+
+            return redirect('categories')->with('success', 'Category updated!');
+        }
+
         return view('categories/edit', [
             'category' => $category
         ]);
-    }
-
-    public function edit(StoreCategoryRequest $request, int $id): RedirectResponse
-    {
-        $category = Category::find($id);
-
-        if ($category === null) {
-            abort(404);
-        }
-
-        $request->validated();
-
-        $category->fill($request->all());
-        $category->is_active = $request->post('is_active', false);
-        $category->save();
-
-        return redirect('categories')->with('success', 'Category updated!');
     }
 
     public function delete(int $id)

@@ -13,7 +13,9 @@ class Recipe extends Model
 
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'category_id',
+        'is_active'
     ];
 
     public function category(): BelongsTo

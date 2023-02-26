@@ -10,6 +10,11 @@ class Ingredient extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'is_active'
+    ];
+
     public function recipes(): BelongsTo
     {
         return $this->belongsTo(Recipe::class);

@@ -66,9 +66,9 @@ Route::middleware(['role'])->group(function () {
         ->name('ingredients.delete');
     Route::get('categories/create', [CategoryController::class, 'create']);
     Route::post('categories/create', [CategoryController::class, 'store']);
-    Route::get('categories/edit/{id}', [CategoryController::class, 'editView'])
+    Route::get('categories/edit/{id}', [CategoryController::class, 'edit']);
+    Route::post('categories/edit/{id}', [CategoryController::class, 'edit'])
         ->name('categories.edit');
-    Route::post('categories/edit/{id}', [CategoryController::class, 'edit']);
     Route::delete('categories/delete/{id}', [CategoryController::class, 'delete'])
         ->name('categories.delete');
 });

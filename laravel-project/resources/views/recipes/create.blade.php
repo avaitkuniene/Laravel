@@ -38,7 +38,11 @@
                     <label class="form-label">Description:</label>
                     <textarea type="text" name="description" value="{{ old('description') }}" class="form-control
                     @error('description') is-invalid @enderror" placeholder="Description"></textarea>
-                </div><br>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="is_active" class="form-check-input" value="1" @if (old('is_active')) checked @endif>
+                    <label class="form-check-label">Active?</label>
+                </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-outline-light">Save</button>
                 </div>

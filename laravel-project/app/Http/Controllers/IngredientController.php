@@ -54,19 +54,6 @@ class IngredientController extends Controller
         return view('ingredients/create');
     }
 
-    public function editView($id): View
-    {
-        $ingredient = Ingredient::find($id);
-
-        if ($ingredient === null) {
-            abort(404);
-        }
-
-        return view('ingredients/edit', [
-            'ingredient' => $ingredient
-        ]);
-    }
-
     public function edit(Request $request, int $id): View|RedirectResponse
     {
         $ingredient = Ingredient::find($id);
@@ -87,10 +74,10 @@ class IngredientController extends Controller
             $ingredient->is_active = $request->post('is_active', false);
             $ingredient->save();
 
-            return redirect('categories')->with('success', 'Category updated!');
+            return redirect('ingredients')->with('success', 'Category updated!');
         }
 
-        return view('categories/edit', [
+        return view('ingredients/edit', [
             'ingredient' => $ingredient
         ]);
     }
