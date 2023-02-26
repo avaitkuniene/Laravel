@@ -3,7 +3,7 @@
 @section('title', 'Recipes')
 
 @section('content')
-    @include('layouts.success')
+@include('layouts.success')
 
     <div class="row row-cols-5 row-cols-md-5 g-4">
         @foreach($recipes as $recipe)
@@ -22,8 +22,5 @@
                 </div>
             </div>
         @endforeach
-    </div><br>
-    <div class="row">
-        {{ $recipes->links() }}
     </div>
 @endsection

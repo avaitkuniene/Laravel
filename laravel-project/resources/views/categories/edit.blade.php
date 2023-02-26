@@ -1,18 +1,8 @@
 @extends('layouts.layout')
 
-@section('title', 'Create new category')
+@section('title', 'Edit category ' .  $category->name)
 
 @section('content')
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
     @csrf
 
@@ -23,6 +13,8 @@
                     <a class="text-white text-center" href="{{ url('categories', ['id' => $category->id]) }}"><h3>{{ $category->name }}</h3></a>
                 </li><br>
                 <form action="{{ url('categories/edit') }}" method="post" class="row g-3">
+                    @include('layouts.error')
+                    @include('layouts.success')
                     <li class="list-group-item text-bg-dark">
                         <label class="form-label">New category name:</label>
                         <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="New category name">

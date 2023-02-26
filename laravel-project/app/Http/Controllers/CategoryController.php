@@ -35,12 +35,11 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function store(StoreCategoryRequest $request)
+    public function store(StoreCategoryRequest $request): RedirectResponse
     {
         $request->validated();
 
-        $category = Category::create($request->all());
-        $category->save();
+        Category::create($request->all());
 
         return redirect('categories')
             ->with('success', 'Category created successfully!');
@@ -62,7 +61,8 @@ class CategoryController extends Controller
             'category' => $category
         ]);
     }
-    public function edit(StoreCategoryRequest $request, int $id): View|RedirectResponse
+
+    public function edit(StoreCategoryRequest $request, int $id): RedirectResponse
     {
         $category = Category::find($id);
 
@@ -70,20 +70,13 @@ class CategoryController extends Controller
             abort(404);
         }
 
-        if ($request->isMethod('post')) {
+        $request->validated();
 
-            $request->validated();
+        $category->fill($request->all());
+        $category->is_active = $request->post('is_active', false);
+        $category->save();
 
-            $category->fill($request->all());
-            $category->is_active = $request->post('is_active', false);
-            $category->save();
-
-            return redirect('categories')->with('success', 'Category updated!');
-        }
-
-        return view('categories/edit', [
-            'category' => $category
-        ]);
+        return redirect('categories')->with('success', 'Category updated!');
     }
 
     public function delete(int $id)

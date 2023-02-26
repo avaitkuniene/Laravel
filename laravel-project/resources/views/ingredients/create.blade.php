@@ -4,22 +4,13 @@
 
 @section('content')
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    @include('layouts.success')
-
     <div class="col d-flex justify-content-center" style="width: 60%">
         <div class="card text-bg-dark border-light justify-content-center align-items-center" style="width: 80%;">
             <ul class="list-group list-group-flush text-bg-dark" style="width: 60%;">
                 <li class="list-group-item text-bg-dark text-center"><h3>Create new ingredient</h3></li><br>
                 <form action="{{ url('ingredients/create') }}" method="post" class="row g-3">
+                    @include('layouts.error')
+                    @include('layouts.success')
                     @csrf
                     <li class="list-group-item text-bg-dark">
                         <label class="form-label">Ingredient name:</label>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Ingredient;
 use App\Models\Recipe;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ class RecipeController extends Controller
 {
     public function index(Request $request): View
     {
+        $users = User::all();
         $recipes = Recipe::query();
 
         if ($request->query('category_id')) {
@@ -25,6 +27,7 @@ class RecipeController extends Controller
             'recipes' => $recipes->with('category', 'ingredients')->paginate(5),
             'categories' => $categories,
             'category_id' => $request->query('category_id'),
+            'users' => $users
         ]);
     }
 
@@ -44,12 +47,13 @@ class RecipeController extends Controller
     public function edit(Request $request, int $id): View|RedirectResponse
     {
         $recipe = Recipe::find($id);
-        $ingredients = Ingredient::all();
-        $categories = Category::all();
 
-        if ($recipe=== null) {
+        if ($recipe === null) {
             abort(404);
         }
+
+        $ingredients = Ingredient::all();
+        $categories = Category::all();
 
         if ($request->isMethod('post')) {
 
@@ -57,6 +61,7 @@ class RecipeController extends Controller
                 [
                     'name' => 'required|max:50',
                     'description' => 'required',
+                    'category_id' => 'required'
                 ]
             );
 
@@ -77,13 +82,12 @@ class RecipeController extends Controller
         ]);
     }
 
-    public function delete(int $id)
+    public function delete(int $id): RedirectResponse
     {
-
         $recipe = Recipe::find($id);
         $recipe->ingredients()->detach();
 
-        if ($recipe=== null) {
+        if ($recipe === null) {
             abort(404);
         }
 
@@ -92,16 +96,15 @@ class RecipeController extends Controller
         return redirect('recipes')->with('success', 'Recipe was removed successfully!');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate(
             [
-                'name' => 'required|max:30',
+                'name' => 'required|max:50',
                 'description' => 'required',
                 'category_id' => 'required'
             ]
         );
-
 
         $recipe = Recipe::create($request->all());
 

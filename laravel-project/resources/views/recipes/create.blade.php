@@ -5,6 +5,8 @@
 @section('content')
 
     <form action="{{ url('recipes/create') }}" method="post" class="row g-3" enctype="multipart/form-data">
+        @include('layouts.error')
+        @include('layouts.success')
         @csrf
         <div class="card mb-3 text-bg-dark border-light">
             <div class="card-body">

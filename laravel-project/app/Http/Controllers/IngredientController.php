@@ -34,7 +34,7 @@ class IngredientController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate(
             [
@@ -54,13 +54,14 @@ class IngredientController extends Controller
         return view('ingredients/create');
     }
 
-    public function editView($id)
+    public function editView($id): View
     {
         $ingredient = Ingredient::find($id);
 
         if ($ingredient === null) {
             abort(404);
         }
+
         return view('ingredients/edit', [
             'ingredient' => $ingredient
         ]);
@@ -94,7 +95,7 @@ class IngredientController extends Controller
         ]);
     }
 
-    public function delete(int $id)
+    public function delete(int $id): RedirectResponse
     {
         $ingredient = Ingredient::find($id);
 

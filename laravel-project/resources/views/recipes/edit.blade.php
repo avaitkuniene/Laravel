@@ -3,18 +3,10 @@
 @section('title', 'Edit ' . $recipe->name)
 
 @section('content')
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    @include('layouts.success')
     <form action="{{ route('recipes.edit', ['id' => $recipe->id]) }}" method="post" class="row g-3" enctype="multipart/form-data">
+        @include('layouts.error')
+        @include('layouts.success')
         <div class="card mb-3 text-bg-dark border-light" style="max-width: 90%;">
             <div class="row g-0">
                 <div class="col-md-5">

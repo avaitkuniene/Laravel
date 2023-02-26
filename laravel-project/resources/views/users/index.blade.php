@@ -4,14 +4,10 @@
 
 @section('content')
 
-    @include('layouts.success')
-
-    @if(session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
-    @endif
     <form action="{{ url('change') }}" method="post">
+        @include('layouts.error')
+        @include('layouts.success')
+        @csrf
     <div class="col d-flex justify-content-center" style="width: 60%">
         <div class="card text-bg-dark border-light justify-content-center align-items-center" style="width: 80%;">
             <div class="form-group text-center" style="width: 60%;">
@@ -29,18 +25,6 @@
             <div class="form-group text-center" style="width: 60%;">
                 <h3>Change your password</h3><br>
             </div>
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        @csrf
             <div class="form-group" style="width: 60%;">
                 <label for="old_password">Your current password</label>
                 <input type="password" name="old_password" class="form-control" id="password">

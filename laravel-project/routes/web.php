@@ -37,16 +37,10 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('recipes/create', [RecipeController::class, 'create']);
-    Route::post('recipes/create', [RecipeController::class, 'store']);
     Route::get('ingredients', [IngredientController::class, 'index']);
-    Route::get('ingredients/create', [IngredientController::class, 'create']);
-    Route::post('ingredients/create', [IngredientController::class, 'store']);
-    Route::get('ingredients/{id}', [IngredientController::class, 'show']);
+    Route::get('ingredients/{id}', [IngredientController::class, 'show'])->whereNumber('id');
     Route::get('categories', [CategoryController::class, 'index']);
-    Route::get('categories/create', [CategoryController::class, 'create']);
-    Route::post('categories/create', [CategoryController::class, 'store']);
-    Route::get('categories/{id}', [CategoryController::class, 'show']);
+    Route::get('categories/{id}', [CategoryController::class, 'show'])->whereNumber('id');
     Route::get('logout', [AuthorizationController::class, 'logout'])
         ->name('logout');
     Route::get('change', [ChangePasswordController::class, 'show']);
@@ -56,16 +50,22 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['role'])->group(function () {
+    Route::get('recipes/create', [RecipeController::class, 'create']);
+    Route::post('recipes/create', [RecipeController::class, 'store']);
     Route::get('recipes/edit/{id}', [RecipeController::class, 'edit'])
         ->name('recipes.edit');
     Route::post('recipes/edit/{id}', [RecipeController::class, 'edit']);
     Route::delete('recipes/delete/{id}', [RecipeController::class, 'delete'])
         ->name('recipes.delete');
+    Route::get('ingredients/create', [IngredientController::class, 'create']);
+    Route::post('ingredients/create', [IngredientController::class, 'store']);
     Route::get('ingredients/edit/{id}', [IngredientController::class, 'editView'])
         ->name('ingredients.edit');
     Route::post('ingredients/edit/{id}', [IngredientController::class, 'edit']);
     Route::delete('ingredients/delete/{id}', [IngredientController::class, 'delete'])
         ->name('ingredients.delete');
+    Route::get('categories/create', [CategoryController::class, 'create']);
+    Route::post('categories/create', [CategoryController::class, 'store']);
     Route::get('categories/edit/{id}', [CategoryController::class, 'editView'])
         ->name('categories.edit');
     Route::post('categories/edit/{id}', [CategoryController::class, 'edit']);

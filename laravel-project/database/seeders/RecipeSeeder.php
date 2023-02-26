@@ -80,7 +80,6 @@ class RecipeSeeder extends Seeder
                 'is_active' => fake()->boolean(),
                 'category_id' => fake()->numberBetween(1, 10),
             ],
-
         ]);
     }
 }

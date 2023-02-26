@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="Recipe app. Added controllers, models, migrations, routes, views, requests, middlewares, seeders, storage.">
+    <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="Updated routes, recipe controller, added login, registration, logout and profile.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/AuthorizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/AuthorizationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/ChangePasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/ChangePasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/IngredientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/IngredientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/Public/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/Public/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/RecipeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/categories/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/categories/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Requests/Categories/StoreCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Requests/Categories/StoreCategoryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/database/seeders/RecipeSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/database/seeders/RecipeSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/layouts/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/layouts/success.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/passwords/change.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/layouts/error.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/passwords/show.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/recipes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/recipes/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/recipes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/recipes/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/recipes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/recipes/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/registration/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/registration/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +72,11 @@
       <recent name="C:\Users\Princeses\Laravel\example-app\app\Models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Princeses\Laravel\laravel-project\resources\views" />
+      <recent name="C:\Users\Princeses\Laravel\laravel-project\resources\views\admin" />
       <recent name="C:\Users\Princeses\Laravel\example-app\public" />
       <recent name="C:\Users\Princeses\Laravel\example-app\public\books" />
       <recent name="C:\Users\Princeses\Laravel\example-app\storage\app" />
-      <recent name="C:\Users\Princeses\Laravel\example-app\storage\app\public" />
-      <recent name="C:\Users\Princeses\Laravel\example-app\resources\views\registration" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675708161981</updated>
       <workItem from="1675708163552" duration="88252000" />
-      <workItem from="1676974874037" duration="63974000" />
+      <workItem from="1676974874037" duration="77994000" />
     </task>
     <task id="LOCAL-00001" summary="Updated book controller, author controller">
       <created>1675794499567</created>
@@ -110,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677166571300</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated routes, recipe controller, added login, registration, logout and profile.">
+      <created>1677179101332</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179101332</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +154,8 @@
     <MESSAGE value="Added login/logout" />
     <MESSAGE value="new project" />
     <MESSAGE value="Recipe app. Added controllers, models, migrations, routes, views, requests, middlewares, seeders, storage." />
-    <option name="LAST_COMMIT_MESSAGE" value="Recipe app. Added controllers, models, migrations, routes, views, requests, middlewares, seeders, storage." />
+    <MESSAGE value="Updated routes, recipe controller, added login, registration, logout and profile." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated routes, recipe controller, added login, registration, logout and profile." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Public;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Recipe;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        $recipes = Recipe::with('category', 'ingredients')->paginate(10);
+        $recipes = Recipe::take(10)->latest()->get();
 
         $categories = Category::all();
 

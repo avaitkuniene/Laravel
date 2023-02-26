@@ -3,20 +3,12 @@
 @section('title', 'Register')
 
 @section('content')
-    @include('layouts.success')
+
     <form action="{{ url('register') }}" method="post">
         <div class="col d-flex justify-content-center" style="width: 60%">
             <div class="card text-bg-dark border-light justify-content-center align-items-center" style="width: 80%;">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
+                @include('layouts.error')
+                @include('layouts.success')
                 @csrf
                 <div class="form-group text-center" style="width: 60%;">
                     <h3>Register</h3><br>
