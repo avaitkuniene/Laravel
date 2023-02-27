@@ -4,14 +4,10 @@
     <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="Cleaned code, added admin functions, buttons visible only for admin users.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/IngredientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Controllers/IngredientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/app/Models/Ingredient.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Models/Ingredient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/app/Models/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Models/Recipe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/app/Http/Requests/Registration/StoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Http/Requests/Registration/StoreRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/recipes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/recipes/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/recipes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/recipes/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/ingredients/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-project/resources/views/layouts/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/resources/views/layouts/head.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel-project/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675708161981</updated>
       <workItem from="1675708163552" duration="88252000" />
-      <workItem from="1676974874037" duration="80663000" />
+      <workItem from="1676974874037" duration="82771000" />
     </task>
     <task id="LOCAL-00001" summary="Updated book controller, author controller">
       <created>1675794499567</created>
@@ -123,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677435075351</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Cleaned code, added admin functions, buttons visible only for admin users.">
+      <created>1677437593605</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677437593605</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -23,11 +23,12 @@ class CategoryController extends Controller
     public function show(int $id): View
     {
         $category = Category::find($id);
-        $recipes = Recipe::where('category_id', $id)->get();
 
         if ($category === null) {
             abort(404);
         }
+
+        $recipes = Recipe::where('category_id', $id)->get();
 
         return view('categories/show', [
             'category' => $category,
@@ -45,7 +46,7 @@ class CategoryController extends Controller
             ->with('success', 'Category created successfully!');
     }
 
-    public function create(): View|RedirectResponse
+    public function create(): View
     {
         return view('categories/create');
     }
@@ -67,7 +68,7 @@ class CategoryController extends Controller
             );
 
             $category->fill($request->all());
-            $category->enabled = $request->post('is_active', false);
+            $category->is_active = $request->post('is_active', false);
             $category->save();
 
             return redirect('categories')->with('success', 'Category updated!');
@@ -78,7 +79,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function delete(int $id)
+    public function delete(int $id): RedirectResponse
     {
         $category = Category::find($id);
 

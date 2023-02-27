@@ -8,6 +8,7 @@
         background-image: url('https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-686.jpg?w=1380&t=st=1676988278~exp=1676988878~hmac=60deef36adabaf8dc33ae49cd4c9cb3b8ff668b87c597157942c60cf07383ffb');
         background-size: cover;
     }
+
     footer {
         position: fixed;
         left: 0;
@@ -16,11 +17,13 @@
         color: white;
         text-align: left;
     }
+
     .recipe_img {
         width: 100%;
         height: 200px;
         object-fit: cover;
     }
+
     .one-recipe-img {
         width: 100%;
         height: 100%;

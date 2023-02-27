@@ -10,7 +10,7 @@
                 <li class="list-group-item text-bg-dark">
                     <a class="text-white text-center" href="{{ url('ingredients', ['id' => $ingredient->id]) }}"><h3>{{ $ingredient->name }}</h3></a>
                 </li><br>
-                <form action="{{ url('ingredients/edit') }}" method="post" class="row g-3">
+                <form action="{{ route('ingredients.edit', ['id' => $ingredient->id]) }}" method="post" class="row g-3">
                     @include('layouts.error')
                     @include('layouts.success')
                     @csrf
@@ -22,7 +22,7 @@
                         @enderror
                     </li>
                     <li class="list-group-item text-bg-dark">
-                        <input type="checkbox" name="enabled" class="form-check-input" value="1" @if (old('is_active')) checked @endif>
+                        <input type="checkbox" name="is_active" class="form-check-input" value="1" @if (old('is_active')) checked @endif>
                         <label class="form-check-label">Active?</label>
                     </li>
                     <li class="list-group-item text-bg-dark">
