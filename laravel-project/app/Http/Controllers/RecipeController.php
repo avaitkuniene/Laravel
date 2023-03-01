@@ -14,7 +14,6 @@ class RecipeController extends Controller
 {
     public function index(Request $request): View
     {
-        $users = User::all();
         $recipes = Recipe::query();
 
         if ($request->query('category_id')) {
@@ -26,8 +25,7 @@ class RecipeController extends Controller
         return view('recipes/index', [
             'recipes' => $recipes->with('category', 'ingredients')->paginate(5),
             'categories' => $categories,
-            'category_id' => $request->query('category_id'),
-            'users' => $users
+            'category_id' => $request->query('category_id')
         ]);
     }
 

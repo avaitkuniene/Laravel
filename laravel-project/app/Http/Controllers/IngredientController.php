@@ -43,7 +43,6 @@ class IngredientController extends Controller
         );
 
         $ingredient = Ingredient::create($request->all());
-        $ingredient->save();
 
         return redirect('ingredients')
             ->with('success', 'Ingredient created successfully!');

@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('home', [HomeController::class, 'index']);
 Route::get('recipes', [RecipeController::class, 'index']);
 Route::get('recipes/{id}', [RecipeController::class, 'show'])->whereNumber('id');
 

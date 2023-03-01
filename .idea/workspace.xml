@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="Updated categories and ingredients edit blades, routes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-project/app/Models/Ingredient.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-project/app/Models/Ingredient.php" afterDir="false" />
-    </list>
+    <list default="true" id="265e54b8-73cf-4de3-8042-5889ab6c359d" name="Changes" comment="Added soft delete trait for ingredient and category models, made migrations to add soft delete columns to ingredients and categories tables." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675708161981</updated>
       <workItem from="1675708163552" duration="88252000" />
-      <workItem from="1676974874037" duration="83951000" />
+      <workItem from="1676974874037" duration="84293000" />
     </task>
     <task id="LOCAL-00001" summary="Updated book controller, author controller">
       <created>1675794499567</created>
@@ -129,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677488744960</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added soft delete trait for ingredient and category models, made migrations to add soft delete columns to ingredients and categories tables.">
+      <created>1677684891295</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677684891295</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +157,8 @@
     <MESSAGE value="Updated routes, recipe controller, added login, registration, logout and profile." />
     <MESSAGE value="Cleaned code, added admin functions, buttons visible only for admin users." />
     <MESSAGE value="Updated categories and ingredients edit blades, routes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated categories and ingredients edit blades, routes." />
+    <MESSAGE value="Added soft delete trait for ingredient and category models, made migrations to add soft delete columns to ingredients and categories tables." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added soft delete trait for ingredient and category models, made migrations to add soft delete columns to ingredients and categories tables." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
